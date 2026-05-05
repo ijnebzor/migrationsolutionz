@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration SolutionZ — Registered Migration Agent, Melbourne</title>
+    <meta name="description" content="Migration SolutionZ helps you navigate Australian visa applications. Registered migration agent Sheryl Zorella (MARN: 0531191) — skilled, employer-sponsored, partner, student & business visas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --teal: #0d4f4f;
+            --teal-light: #147a7a;
+            --teal-bg: #f0f9f9;
+            --gold: #c5952a;
+            --gold-light: #fdf6e3;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --radius: 12px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--gray-700);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--teal); line-height: 1.3; }
+
+        a { color: var(--teal-light); text-decoration: none; }
+
+        img { max-width: 100%; display: block; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        nav .container {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 72px;
+        }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--teal); }
+        .nav-logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray-600); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--teal); }
+        .nav-cta {
+            background: var(--teal); color: var(--white); padding: 10px 24px;
+            border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--teal-light); }
+
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--teal); margin: 6px 0; transition: 0.3s; }
+
+        /* HERO */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -30%; right: -10%; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(197,149,42,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero .container { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-text h1 { font-size: 3rem; color: var(--white); margin-bottom: 20px; }
+        .hero-text h1 span { color: var(--gold); }
+        .hero-text p { font-size: 1.15rem; color: rgba(255,255,255,0.85); margin-bottom: 12px; max-width: 500px; }
+        .hero-marn {
+            display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+            padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: rgba(255,255,255,0.9);
+            margin-bottom: 28px;
+        }
+        .hero-btn {
+            display: inline-block; background: var(--gold); color: var(--white); padding: 14px 32px;
+            border-radius: 8px; font-weight: 700; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        .hero-image { text-align: center; }
+        .hero-illustration {
+            width: 360px; max-width: 100%; height: auto;
+            filter: drop-shadow(0 24px 60px rgba(0,0,0,0.35));
+        }
+
+        /* SECTION */
+        section { padding: 100px 0; }
+        .section-label {
+            text-transform: uppercase; font-size: 0.8rem; font-weight: 700; letter-spacing: 2px;
+            color: var(--gold); margin-bottom: 12px;
+        }
+        .section-title { font-size: 2.25rem; margin-bottom: 20px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--gray-600); max-width: 640px; margin-bottom: 48px; }
+
+        /* ABOUT */
+        .about { background: var(--gray-50); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+        .about-highlights { margin-top: 28px; }
+        .about-highlights li {
+            list-style: none; padding: 8px 0; padding-left: 28px; position: relative; font-weight: 500;
+        }
+        .about-highlights li::before {
+            content: ''; position: absolute; left: 0; top: 16px;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--gold);
+        }
+
+        /* PROCESS */
+        .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .process-step {
+            text-align: center; padding: 32px 20px; background: var(--white);
+            border: 1px solid var(--gray-200); border-radius: var(--radius);
+            position: relative;
+        }
+        .step-number {
+            width: 48px; height: 48px; border-radius: 50%; background: var(--teal); color: var(--white);
+            font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
+        }
+        .process-step h3 { font-size: 1rem; margin-bottom: 8px; }
+        .process-step p { font-size: 0.9rem; color: var(--gray-600); }
+
+        /* VISAS */
+        .visas { background: var(--teal); color: var(--white); }
+        .visas .section-title { color: var(--white); }
+        .visas .section-subtitle { color: rgba(255,255,255,0.7); }
+        .visa-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .visa-card {
+            background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius); padding: 32px 24px; transition: background 0.2s;
+        }
+        .visa-card:hover { background: rgba(255,255,255,0.14); }
+        .visa-icon { font-size: 2rem; margin-bottom: 16px; }
+        .visa-card h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 10px; }
+        .visa-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+        /* TESTIMONIALS */
+        .testimonials { background: var(--gray-50); }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        .testimonial-card {
+            background: var(--white); border-radius: var(--radius); padding: 32px;
+            border: 1px solid var(--gray-200); display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start;
+        }
+        .testimonial-card blockquote { font-style: italic; color: var(--gray-600); position: relative; padding-left: 24px; border-left: 3px solid var(--gold); }
+        .testimonial-card .attribution { text-align: right; white-space: nowrap; }
+        .testimonial-card .attribution strong { display: block; color: var(--teal); font-size: 0.95rem; }
+        .testimonial-card .attribution span { font-size: 0.8rem; color: var(--gray-600); }
+
+        /* CONTACT */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+        .contact-info h3 { margin-bottom: 24px; font-size: 1.5rem; }
+        .contact-detail { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+        .contact-detail .icon {
+            width: 44px; height: 44px; border-radius: 10px; background: var(--teal-bg);
+            display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .contact-detail .text strong { display: block; font-size: 0.85rem; color: var(--gray-600); margin-bottom: 2px; }
+        .contact-detail .text span { font-weight: 500; color: var(--teal); }
+
+        .contact-form { background: var(--gray-50); border-radius: var(--radius); padding: 36px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px 16px; border: 1px solid var(--gray-200); border-radius: 8px;
+            font-family: inherit; font-size: 0.95rem; transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--teal-light); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit {
+            width: 100%; padding: 14px; background: var(--teal); color: var(--white);
+            border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
+            cursor: pointer; transition: background 0.2s;
+        }
+        .form-submit:hover { background: var(--teal-light); }
+
+        /* FOOTER */
+        footer { background: var(--teal); color: rgba(255,255,255,0.6); padding: 40px 0; text-align: center; font-size: 0.85rem; }
+        footer .logo { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--white); margin-bottom: 4px; }
+        footer .logo span { color: var(--gold); }
+        footer .marn { font-size: 0.8rem; margin-bottom: 8px; color: rgba(255,255,255,0.5); }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links, .nav-cta { display: none; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); padding: 24px; gap: 20px; border-bottom: 1px solid var(--gray-200); }
+            .hero .container { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-marn { margin-left: auto; margin-right: auto; }
+            .hero-image { order: -1; }
+            .hero-illustration { width: 240px; margin: 0 auto; }
+            .about-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .visa-grid { grid-template-columns: 1fr; }
+            .testimonial-card { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="container">
+        <a href="#" class="nav-logo">Migration <span>SolutionZ</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#visas">Visas</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Free Consultation</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-text">
+            <h1>Your Path to <span>Australia</span> Starts Here</h1>
+            <p>Whether you're looking to live, work, or study in Australia, our registered migration agent will guide you through every step of the visa process.</p>
+            <div class="hero-marn">Registered Migration Agent &mdash; MARN: 0531191</div>
+            <br>
+            <a href="#contact" class="hero-btn">Book a Consultation</a>
+        </div>
+        <div class="hero-image">
+            <svg class="hero-illustration" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="heroEmblemTitle">
+                <title id="heroEmblemTitle">Australian migration emblem with MARN 0531191</title>
+                <defs>
+                    <radialGradient id="haloGrad" cx="50%" cy="50%">
+                        <stop offset="0%" stop-color="#c5952a" stop-opacity="0.45"/>
+                        <stop offset="55%" stop-color="#c5952a" stop-opacity="0.08"/>
+                        <stop offset="100%" stop-color="#c5952a" stop-opacity="0"/>
+                    </radialGradient>
+                    <radialGradient id="innerGrad" cx="50%" cy="38%">
+                        <stop offset="0%" stop-color="#1f7d7d"/>
+                        <stop offset="100%" stop-color="#062828"/>
+                    </radialGradient>
+                    <symbol id="star5" viewBox="-20 -20 40 40">
+                        <path d="M 0,-19 L 4.27,-5.87 L 18.07,-5.87 L 6.91,2.24 L 11.18,15.37 L 0,7.26 L -11.18,15.37 L -6.91,2.24 L -18.07,-5.87 L -4.27,-5.87 Z" fill="currentColor"/>
+                    </symbol>
+                    <path id="topArc" d="M 78,200 A 122,122 0 0 1 322,200"/>
+                </defs>
+
+                <!-- Soft outer halo -->
+                <circle cx="200" cy="200" r="200" fill="url(#haloGrad)"/>
+
+                <!-- Sparkle stars scattered outside the ring -->
+                <g style="color: #c5952a;">
+                    <use href="#star5" x="29" y="29" width="24" height="24" opacity="0.7"/>
+                    <use href="#star5" x="345" y="50" width="14" height="14" opacity="0.5"/>
+                    <use href="#star5" x="368" y="195" width="10" height="10" opacity="0.45"/>
+                    <use href="#star5" x="18" y="198" width="12" height="12" opacity="0.5"/>
+                    <use href="#star5" x="48" y="342" width="18" height="18" opacity="0.6"/>
+                    <use href="#star5" x="350" y="338" width="20" height="20" opacity="0.55"/>
+                </g>
+
+                <!-- Outer thin ring -->
+                <circle cx="200" cy="200" r="148" fill="none" stroke="#c5952a" stroke-width="1.2" stroke-opacity="0.4"/>
+                <!-- Main gold ring -->
+                <circle cx="200" cy="200" r="140" fill="none" stroke="#c5952a" stroke-width="2.5" stroke-opacity="0.9"/>
+
+                <!-- Inner teal medallion -->
+                <circle cx="200" cy="200" r="138" fill="url(#innerGrad)"/>
+
+                <!-- Arched 'AUSTRALIA' text along top -->
+                <text fill="#c5952a" font-family="Inter, sans-serif" font-size="15" font-weight="600" letter-spacing="7">
+                    <textPath href="#topArc" startOffset="50%" text-anchor="middle">AUSTRALIA</textPath>
+                </text>
+
+                <!-- Stars: large feature star left, Southern Cross cluster right -->
+                <g style="color: #ffffff;">
+                    <!-- Large feature star (Commonwealth-style) -->
+                    <use href="#star5" x="112" y="138" width="58" height="58"/>
+                    <!-- Southern Cross cluster -->
+                    <use href="#star5" x="245" y="128" width="32" height="32"/>
+                    <use href="#star5" x="222" y="182" width="26" height="26"/>
+                    <use href="#star5" x="280" y="166" width="22" height="22"/>
+                    <use href="#star5" x="263" y="208" width="14" height="14"/>
+                    <use href="#star5" x="246" y="236" width="30" height="30"/>
+                </g>
+
+                <!-- Decorative flanking dots for the MARN line -->
+                <circle cx="138" cy="302" r="2" fill="#c5952a" opacity="0.7"/>
+                <circle cx="262" cy="302" r="2" fill="#c5952a" opacity="0.7"/>
+
+                <!-- MARN credential at bottom -->
+                <text x="200" y="306" text-anchor="middle" fill="#c5952a" font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="3">
+                    MARN 0531191
+                </text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div>
+                <p class="section-label">About</p>
+                <h2 class="section-title">Sheryl Zorella</h2>
+                <p>Sheryl is a registered migration agent (MARN: 0531191) who has helped a large number of people from around the world successfully migrate to Australia. With deep knowledge of Australian immigration law and years of hands-on experience, she provides personalised guidance tailored to your unique circumstances.</p>
+                <p style="margin-top: 16px;">From the moment you make contact, Sheryl works to understand your situation and identify the best visa pathway. She takes complete responsibility for preparing your application from start to finish &mdash; including skills assessments, state nominations, and every supporting process along the way.</p>
+                <ul class="about-highlights">
+                    <li>Registered Migration Agent (MARN: 0531191)</li>
+                    <li>End-to-end application management</li>
+                    <li>Clear, jargon-free guidance at every step</li>
+                    <li>Proven track record across all major visa categories</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://www.qualtraininternational.com.au/img/sheryl.png" alt="Sheryl Zorella" style="border-radius: 16px; box-shadow: 0 16px 48px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+    <div class="container">
+        <p class="section-label">How It Works</p>
+        <h2 class="section-title">A Straightforward Process</h2>
+        <p class="section-subtitle">We handle the complexity so you don't have to. Here's what to expect when you work with us.</p>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Initial Consultation</h3>
+                <p>We learn about your circumstances and determine which visa you're eligible for.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Visa Strategy</h3>
+                <p>We identify the best visa category and create a clear plan tailored to your situation.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Application Prep</h3>
+                <p>We prepare your full application, including skills assessments, nominations, and all documentation.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Lodgement &amp; Support</h3>
+                <p>We submit your application and keep you informed through to the final decision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VISAS -->
+<section class="visas" id="visas">
+    <div class="container">
+        <p class="section-label">Services</p>
+        <h2 class="section-title">Visa Categories We Handle</h2>
+        <p class="section-subtitle">We cover a comprehensive range of Australian visa types to suit your needs.</p>
+        <div class="visa-grid">
+            <div class="visa-card">
+                <div class="visa-icon">&#x1F3AF;</div>
+                <h3>General Skilled Migration</h3>
+                <p>Points-tested visas for skilled workers, including subclass 189, 190, and 491 pathways to permanent residency.</p>
+            </div>
+            <div class="visa-card">
+                <div class="visa-icon">&#x1F3E2;</div>
+                <h3>Employer-Sponsored Work Visas</h3>
+                <p>Temporary and permanent employer-sponsored visas including subclass 482 and 186 nominations.</p>
+            </div>
+            <div class="visa-card">
+                <div class="visa-icon">&#x2764;</div>
+                <h3>Family &amp; Partner Visas</h3>
+                <p>Onshore and offshore partner visas, parent visas, and other family migration pathways.</p>
+            </div>
+            <div class="visa-card">
+                <div class="visa-icon">&#x1F393;</div>
+                <h3>Student Visas</h3>
+                <p>Student visa applications for international students looking to study at Australian institutions.</p>
+            </div>
+            <div class="visa-card">
+                <div class="visa-icon">&#x1F4C8;</div>
+                <h3>Business &amp; Investment Visas</h3>
+                <p>Business innovation, investor, and entrepreneur visa streams for business migration to Australia.</p>
+            </div>
+            <div class="visa-card">
+                <div class="visa-icon">&#x1F4CB;</div>
+                <h3>Skills Assessments</h3>
+                <p>Full management of skills assessment applications required for skilled migration and employer-sponsored visas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <p class="section-label">Testimonials</p>
+        <h2 class="section-title">Success Stories</h2>
+        <p class="section-subtitle">Real stories from clients who've made Australia home with our help.</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <blockquote>We could not possibly be more happy with Sheryl's service and professionalism. The personalised plan she laid out was straightforward to follow, and her guidance throughout was second-to-none. We never would have thought the entire process would be so fast &mdash; initial consultation in December, permanent residency granted in March.</blockquote>
+                <div class="attribution">
+                    <strong>Minkyung &amp; Cameron</strong>
+                    <span>South Korea / Australia</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>Sheryl was an angel on our shoulder during the whole process, both the temporary work visa and the permanent visa two years later. Every question and concern we had was promptly addressed. She even did a great job calming me down when I got stressed. She knows she's dealing with people's lives and she really cares about it.</blockquote>
+                <div class="attribution">
+                    <strong>Rafael &amp; Vivian</strong>
+                    <span>Brazil / Melbourne</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>She managed to perform nothing less than a miracle getting our visas approved within a short period of time. Sheryl was exceptionally thorough and honest from the start, knew exactly what was required, and never made a promise she couldn't keep. The Viljoen family will be forever grateful.</blockquote>
+                <div class="attribution">
+                    <strong>Johan V</strong>
+                    <span>South Africa</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>Sheryl was always on the front foot with my application process, keeping me posted on any changes and updates. She supported me from a 457 visa through to permanent residence, communicating complex processes and legal jargon in a concise and easy to grasp manner. Highly recommended.</blockquote>
+                <div class="attribution">
+                    <strong>Urmila R</strong>
+                    <span>India / Melbourne</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>Sheryl was absolutely professional and helpful from start to finish. Her service went beyond expectations &mdash; she always kept in communication with us and wanted to make sure we felt secure and looked after. Our Permanent Residency was granted in three weeks after receiving the Nomination Approval.</blockquote>
+                <div class="attribution">
+                    <strong>Cihan &amp; Seyhan B</strong>
+                    <span>Turkey / Melbourne</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>With Sheryl looking after your application, you will feel in good hands. She is very detailed in explaining what is required and very meticulous. When the 457 visa was abolished, Sheryl stayed on top of everything, advancing herself in understanding the new pathways to keep us confident that all would be well.</blockquote>
+                <div class="attribution">
+                    <strong>Vanghie</strong>
+                    <span>Philippines / Melbourne</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Start Your Journey</h2>
+        <p class="section-subtitle">Get in touch for a consultation. We'll assess your circumstances and advise you on the best path forward.</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Reach Sheryl Directly</h3>
+                <div class="contact-detail">
+                    <div class="icon">&#x1F4DE;</div>
+                    <div class="text">
+                        <strong>Phone</strong>
+                        <span>(03) 9570 1830</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">&#x1F4F1;</div>
+                    <div class="text">
+                        <strong>Mobile</strong>
+                        <span>0418 138 327</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">&#x2709;</div>
+                    <div class="text">
+                        <strong>Email</strong>
+                        <span>sherylzorella@migrationsolution.com</span>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="icon">&#x1F4CD;</div>
+                    <div class="text">
+                        <strong>Office</strong>
+                        <span>2/197 East Boundary Rd, Bentleigh East, VIC 3165</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="visa-type">Visa Type of Interest</label>
+                    <input type="text" id="visa-type" name="visa_type" placeholder="e.g. Partner Visa, Skilled Migration">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell us about your situation</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Enquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="logo">Migration <span>SolutionZ</span></div>
+        <div class="marn">Registered Migration Agent &mdash; MARN: 0531191</div>
+        <p>&copy; 2025 Migration SolutionZ. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('hamburger').addEventListener('click', function() {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            document.getElementById('navLinks').classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
